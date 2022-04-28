@@ -1,0 +1,20 @@
+account_tax_rule_tax_deposit
+============================
+
+The account_tax_rule_tax_deposit module of the Tryton application platform.
+
+Installing
+----------
+
+See INSTALL
+
+
+License
+-------
+
+See LICENSE
+
+Copyright
+---------
+
+See COPYRIGHT
