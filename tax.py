@@ -16,9 +16,25 @@ class TaxRuleLine(metaclass=PoolMeta):
     suspensive_regime = fields.Boolean("Suspensive Regime")
 
     def match(self, pattern):
-        print('\n\nTAX PATTERN:\n',pattern,'\n')
+        pattern = pattern.copy()
+        suspensive_regime = None
         if 'suspensive_regime' in pattern:
-            if self.suspensive_regime == False:
+            suspensive_regime = pattern.pop('suspensive_regime')
+
+        from_tax_deposit = False
+        if 'from_tax_deposit' in pattern:
+            from_tax_deposit = pattern.pop('from_tax_deposit')
+
+        to_tax_deposit = False
+        if 'to_tax_deposit' in pattern:
+            to_tax_deposit = pattern.pop('to_tax_deposit')
+
+        if suspensive_regime:
+            if suspensive_regime == False:
+                return False
+            if not from_tax_deposit and not to_tax_deposit:
+                return False
+            if from_tax_deposit and not to_tax_deposit:
                 return False
         return super().match(pattern)
 

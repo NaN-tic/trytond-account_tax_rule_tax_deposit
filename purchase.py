@@ -52,11 +52,20 @@ class Purchase(metaclass=PoolMeta):
 class PurchaseLine(metaclass=PoolMeta):
     __name__ = 'purchase.line'
 
-    @fields.depends('product')
+    @fields.depends('product', 'purchase', '_parent_purchase.shipment_address',
+        '_parent_purchase.warehouse')
     def _get_tax_rule_pattern(self):
         pattern = super()._get_tax_rule_pattern()
-        print('PURCHASE GET TAX RULE PATTERN')
         if self.product and self.product.template.suspensive_regime:
             pattern['suspensive_regime'] = (
                 self.product.template.suspensive_regime)
+        pattern['from_tax_deposit'] = False
+        if (self.purchase and self.purchase.shipment_address and
+                self.purchase.shipment_address.tax_deposit_code):
+            pattern['from_tax_deposit'] = True
+        pattern['to_tax_deposit'] = False
+        if (self.purchase and self.purchase.warehouse and
+                self.purchase.warehouse.address and
+                self.purchase.warehouse.address.tax_deposit_code):
+            pattern['to_tax_deposit'] = True
         return pattern
