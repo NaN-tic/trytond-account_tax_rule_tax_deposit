@@ -56,6 +56,7 @@ class PurchaseLine(metaclass=PoolMeta):
         '_parent_purchase.warehouse')
     def _get_tax_rule_pattern(self):
         pattern = super()._get_tax_rule_pattern()
+        pattern['suspensive_regime'] = False
         if self.product and self.product.template.suspensive_regime:
             pattern['suspensive_regime'] = (
                 self.product.template.suspensive_regime)
