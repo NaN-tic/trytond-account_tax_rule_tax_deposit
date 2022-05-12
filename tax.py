@@ -21,9 +21,6 @@ class TaxRuleLine(metaclass=PoolMeta):
         if 'suspensive_regime' in pattern:
             suspensive_regime = pattern.pop('suspensive_regime')
 
-            if not suspensive_regime:
-                return False
-
         from_tax_deposit = False
         if 'from_tax_deposit' in pattern:
             from_tax_deposit = pattern.pop('from_tax_deposit')
@@ -32,12 +29,16 @@ class TaxRuleLine(metaclass=PoolMeta):
         if 'to_tax_deposit' in pattern:
             to_tax_deposit = pattern.pop('to_tax_deposit')
 
-        if suspensive_regime:
-            if not from_tax_deposit and not to_tax_deposit:
+        if self.suspensive_regime and suspensive_regime != None:
+            if self.suspensive_regime and not suspensive_regime:
                 return False
-            if not from_tax_deposit and to_tax_deposit:
-                return False
-            if from_tax_deposit and not to_tax_deposit:
-                return False
+            else:
+                if from_tax_deposit and to_tax_deposit:
+                    pass
+                else:
+                    return False
+        else:
+            return False
+
         return super().match(pattern)
 
