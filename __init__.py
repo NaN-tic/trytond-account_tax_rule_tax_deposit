@@ -13,7 +13,9 @@ def register():
     Pool.register(
         party.Address,
         product.Template,
+        tax.TaxRuleTemplate,
         tax.TaxRuleLineTemplate,
+        tax.TaxRule,
         tax.TaxRuleLine,
         module='account_tax_rule_tax_deposit', type_='model')
     Pool.register(
