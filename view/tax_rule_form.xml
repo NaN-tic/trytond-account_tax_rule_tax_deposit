@@ -6,7 +6,7 @@ this repository contains the full copyright notices and license terms. -->
     </xpath>
     <xpath expr="/form/field[@name='template_override']" position="replace">
     </xpath>
-    
+
     <xpath expr="/form/field[@name='name']" position="after">
         <group col="-1" colspan="2" id="checkboxes">
         <label name="template_override"/>

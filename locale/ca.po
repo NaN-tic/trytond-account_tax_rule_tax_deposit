@@ -1,0 +1,31 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.tax.rule,use_suspensive_regime:"
+msgid "Use Suspensive Regime"
+msgstr "Utilitzar Règim suspensiu"
+
+msgctxt "field:account.tax.rule.line,suspensive_regime:"
+msgid "Suspensive Regime"
+msgstr "Règim suspensiu"
+
+msgctxt "field:account.tax.rule.line.template,suspensive_regime:"
+msgid "Suspensive Regime"
+msgstr "Règim suspensiu"
+
+msgctxt "field:account.tax.rule.template,use_suspensive_regime:"
+msgid "Use Suspensive Regime"
+msgstr "Utilitzar règim suspensiu"
+
+msgctxt "field:party.address,tax_deposit_code:"
+msgid "Tax Deposit Code"
+msgstr "Codi de dipòsit fiscal"
+
+msgctxt "field:product.template,suspensive_regime:"
+msgid "Suspensive Regime"
+msgstr "Règim suspensiu"
+
+msgctxt "field:purchase.purchase,shipment_address:"
+msgid "Shipment Address"
+msgstr "Adreça d'enviament"
