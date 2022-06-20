@@ -3,9 +3,6 @@
 this repository contains the full copyright notices and license terms. -->
 <data>
     <xpath expr="/form/field[@name='invoice_address']" position="after">
-        <newline/>
-        <label name="shipment_party"/>
-        <field name="shipment_party"/>
         <label name="shipment_address"/>
         <field name="shipment_address"/>
     </xpath>
