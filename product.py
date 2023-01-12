@@ -8,3 +8,7 @@ class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
 
     suspensive_regime = fields.Boolean("Suspensive Regime")
+
+
+class Product(metaclass=PoolMeta):
+    __name__ = 'product.product'

@@ -13,6 +13,7 @@ def register():
     Pool.register(
         party.Address,
         product.Template,
+        product.Product,
         tax.TaxRuleTemplate,
         tax.TaxRuleLineTemplate,
         tax.TaxRule,
