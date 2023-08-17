@@ -7,6 +7,7 @@ from . import product
 from . import purchase
 from . import sale
 from . import tax
+from . import move
 
 
 def register():
@@ -28,3 +29,7 @@ def register():
         sale.SaleLine,
         module='account_tax_rule_tax_deposit', type_='model',
         depends=['sale'])
+    Pool.register(
+        move.Move,
+        module='account_tax_rule_tax_deposit', type_='model',
+        depends=['stock_valued'])
