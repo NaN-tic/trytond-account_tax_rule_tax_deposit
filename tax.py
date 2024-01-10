@@ -30,7 +30,7 @@ class TaxRuleLine(metaclass=PoolMeta):
         states={
             'invisible': ~Eval('_parent_rule', {}).get(
                 'use_suspensive_regime', False)
-        }, depends=['rule'])
+        })
 
     def match(self, pattern):
         pattern = pattern.copy()
