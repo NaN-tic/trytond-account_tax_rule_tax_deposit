@@ -17,8 +17,7 @@ class Purchase(metaclass=PoolMeta):
             'readonly': Eval('state') != 'draft',
             'required': ~Eval('state').in_(
                 ['draft', 'quotation', 'cancelled']),
-            },
-        depends=['party', 'state'])
+            })
 
     @fields.depends('party', 'payment_term', 'lines', 'shipment_address')
     def on_change_party(self):
