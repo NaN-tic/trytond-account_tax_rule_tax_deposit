@@ -22,6 +22,10 @@ msgctxt "field:party.address,tax_deposit_code:"
 msgid "Tax Deposit Code"
 msgstr "Código de depósito fiscal"
 
+msgctxt "field:product.product,suspensive_regime:"
+msgid "Suspensive Regime"
+msgstr "Régimen suspensivo"
+
 msgctxt "field:product.template,suspensive_regime:"
 msgid "Suspensive Regime"
 msgstr "Régimen suspensivo"
